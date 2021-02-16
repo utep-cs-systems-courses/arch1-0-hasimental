@@ -26,22 +26,25 @@ void print_triangle(int leftCol, int size)
   }
 }
 // this will attempt to print the arrow 
-void print_arrow(int leftCol, int size)
+void print_arrow(int leftCol, int leftColSquare, int size)
 {
- int endCol = leftCol + size;
-  for (int row = 0; row < size; row++){
-    int col;
-    for (col = 0; col < leftCol; col++) putchar(' ');
-    for (       ; col < endCol;  col++) putchar('*');
-    putchar('\n');
-  }
-  
+  // this is to print out the triangle 
   for (int row = 0; row <= size; row++) {
     int minCol = leftCol + size - row, maxCol = leftCol + size + row;
     int col;
-    for (col = 0; col < minCol; col++) putchar(' ');
+    for (col = 3; col < minCol; col++) putchar(' ');
     for (       ; col <= maxCol; col++) putchar('*');
     putchar('\n');
- }
+  }
+  
+  // this is to print out the square
+  int endCol = leftColSquare + size;
+  for (int row = 0; row < size; row++){
+    int col;
+    for (col = 0; col < leftColSquare; col++) putchar(' ');
+    for (       ; col < endCol;  col++) putchar('*');
+    putchar('\n');
+  }
 
+ 
 }
